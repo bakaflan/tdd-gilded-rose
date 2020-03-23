@@ -53,7 +53,30 @@ public class Product {
             return;
         }
 
-        if(this.getName().equals("AgedBrie")){
+        if(this.getName().equals("Backstage pass")){
+            if(this.getSellIn()<=0){
+                this.setSellIn(this.sellIn - 1);
+                this.setQuality(0);
+                return;
+            }
+
+            if(this.getSellIn()<=5){
+                this.setSellIn(this.sellIn - 1);
+                this.setQuality(this.quality+3);
+                return;
+            }
+
+            if(this.getSellIn()<=10){
+                this.setSellIn(this.sellIn - 1);
+                this.setQuality(this.quality+2);
+                return;
+            }
+            this.setSellIn(this.sellIn - 1);
+            this.setQuality(this.quality+1);
+            return;
+        }
+
+        if(this.getName().equals("Aged Brie")){
             this.setSellIn(this.sellIn - 1);
             this.setQuality(this.quality+1);
             return;

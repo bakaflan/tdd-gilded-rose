@@ -63,7 +63,7 @@ public class GlobalTest {
 
     @Test
     void AgedBrie_should_increase_quality_when_update(){
-        Product product = new Product("AgedBrie",3,8);
+        Product product = new Product("Aged Brie",3,8);
         product.updateProduct();
         assertEquals(9,product.getQuality());
     }
@@ -75,6 +75,33 @@ public class GlobalTest {
         assertEquals(3,product.getSellIn());
         assertEquals(8,product.getQuality());
     }
-    
+
+    @Test
+    void BackstagePass_should_increase(){
+        Product product = new Product("Backstage pass",15,20);
+        product.updateProduct();
+        assertEquals(21,product.getQuality());
+    }
+
+    @Test
+    void BackstagePass_should_inc_2_when_last_10days(){
+        Product product = new Product("Backstage pass",10,20);
+        product.updateProduct();
+        assertEquals(22,product.getQuality());
+    }
+
+    @Test
+    void BackstagePass_should_inc_3_when_last_5days(){
+        Product product = new Product("Backstage pass",5,20);
+        product.updateProduct();
+        assertEquals(23,product.getQuality());
+    }
+
+    @Test
+    void BackstagePass_should_be_0_when_pass_the_day(){
+        Product product = new Product("Backstage pass",0,20);
+        product.updateProduct();
+        assertEquals(0,product.getQuality());
+    }
 
 }
