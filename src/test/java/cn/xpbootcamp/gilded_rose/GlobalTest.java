@@ -61,6 +61,11 @@ public class GlobalTest {
 
     }
 
-
+    @Test
+    void AgedBrie_should_increase_quality_when_update(){
+        Product product = new Product("AgedBrie",3,8);
+        product.updateProduct();
+        assertEquals(9,product.getQuality());
+    }
 
 }

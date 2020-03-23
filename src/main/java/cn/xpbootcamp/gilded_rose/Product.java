@@ -50,12 +50,17 @@ public class Product {
 
     public void updateProduct() {
         this.setSellIn(this.sellIn - 1);
+
+        if(this.getName()=="AgedBrie"){
+            this.setQuality(this.quality+1);
+            return;
+        }
+
         if(this.sellIn<0){
             this.setQuality(this.quality-2);
 
         }else{
             this.setQuality(this.quality - 1);
-
         }
 
     }
