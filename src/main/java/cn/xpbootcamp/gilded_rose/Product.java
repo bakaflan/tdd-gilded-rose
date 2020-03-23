@@ -49,7 +49,14 @@ public class Product {
 
 
     public void updateProduct() {
-        this.setQuality(this.quality - 1);
         this.setSellIn(this.sellIn - 1);
+        if(this.sellIn<0){
+            this.setQuality(this.quality-2);
+
+        }else{
+            this.setQuality(this.quality - 1);
+
+        }
+
     }
 }
