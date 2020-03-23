@@ -49,17 +49,22 @@ public class Product {
 
 
     public void updateProduct() {
-        this.setSellIn(this.sellIn - 1);
+        if(this.name.equals("Sulfuras")){
+            return;
+        }
 
-        if(this.getName()=="AgedBrie"){
+        if(this.getName().equals("AgedBrie")){
+            this.setSellIn(this.sellIn - 1);
             this.setQuality(this.quality+1);
             return;
         }
 
-        if(this.sellIn<0){
+        if(this.sellIn<=0){
+            this.setSellIn(this.sellIn - 1);
             this.setQuality(this.quality-2);
 
         }else{
+            this.setSellIn(this.sellIn - 1);
             this.setQuality(this.quality - 1);
         }
 

@@ -68,4 +68,13 @@ public class GlobalTest {
         assertEquals(9,product.getQuality());
     }
 
+    @Test
+    void Sulfuras_is_legend(){
+        Product product = new Product("Sulfuras",3,8);
+        product.updateProduct();
+        assertEquals(3,product.getSellIn());
+        assertEquals(8,product.getQuality());
+    }
+    
+
 }
